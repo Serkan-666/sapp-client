@@ -1,0 +1,20 @@
+{
+   "link.home": "Home",
+
+   "validation.usernameRequired": "Username is required.",
+   "validation.passwordRequired": "Password is required.",
+
+   "common.back": "Back",
+   "common.username": "Username",
+   "common.password": "Password",
+   "common.rememberMe": "Remember Me",
+   "common.forgetPassword": "Forgot your password?",
+   "common.dontHaveAccount": "Don't have an account?",
+   "common.doHaveAccount": "Do have an account?",
+   "common.signup": "Sign Up",
+   "common.login": "Login",
+   "common.logout": "Logout",
+   "common.input": "Write somethings..",
+   "common.you":"Me ~>",
+   "user.users": "Users"
+}

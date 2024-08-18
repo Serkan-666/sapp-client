@@ -1,0 +1,20 @@
+{
+   "link.home": "Anasayfa",
+
+   "validation.usernameRequired": "Kullanıcı Adı zorunludur.",
+   "validation.passwordRequired": "Şifre zorunludur.",
+
+   "common.back": "Geri",
+   "common.username": "Kullanıcı Adı",
+   "common.password": "Şifre",
+   "common.rememberMe": "Beni Hatırla",
+   "common.forgetPassword": "Şifrenizi mi unuttunuz?",
+   "common.dontHaveAccount": "Hesabınız yok mu?",
+   "common.doHaveAccount": "Hesabınız var mı?",
+   "common.signup": "Kaydol",
+   "common.login": "Giriş Yap",
+   "common.logout": "Çıkış Yap",
+   "common.input": "Bir şeyler yaz..",
+   "common.you": "Ben ~>",
+   "user.users": "Kullanıcılar"
+}
