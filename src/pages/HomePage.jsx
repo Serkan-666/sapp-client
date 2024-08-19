@@ -11,7 +11,7 @@ import { Box, Grid } from '@mui/material';
 export default function HomePage() {
    const [users, setUsers] = useState([]);
    const [messages, setMessages] = useState([]);
-   const { user } = useUserContext();
+   const { user, handleLogout } = useUserContext();
    const ref = useRef();
    const [mainHeight, setMainHeight] = useState('100vh');
    useEffect(() => {
@@ -25,7 +25,7 @@ export default function HomePage() {
    }, [ref]);
 
    useChatWebSocket(user, setUsers, setMessages);
-   useChatDataFetch(setUsers, setMessages);
+   useChatDataFetch(user, handleLogout, setUsers, setMessages);
 
    return (
       <Box
@@ -77,7 +77,7 @@ export default function HomePage() {
                   {messages.length > 0 && (
                      <ListMessage messages={messages} username={user.username} />
                   )}
-                  <SendMessage username={user.username} />
+                  <SendMessage user={user} handleLogout={handleLogout} />
                </Box>
             </Grid>
          </Grid>

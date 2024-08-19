@@ -8,24 +8,33 @@ import { Send } from '@mui/icons-material';
 import { useIntl } from 'react-intl';
 import { Howl } from 'howler';
 import React from 'react';
+import { toastError } from 'utils/toast';
 const notificationSound = new Howl({
    src: [sound],
 });
 
-export default function SendMessage({ username }) {
+export default function SendMessage({ user, handleLogout }) {
    const { formatMessage } = useIntl();
 
    const { mode } = useVolumeContext();
    const handleSubmit = async (values, { resetForm }) => {
       try {
          if (values.message !== '') {
-            await fetchPostFunction('/message/send', { username, content: values.message });
+            await fetchPostFunction(
+               '/message/send',
+               { username: user.username, content: values.message },
+               user.token,
+            );
             if (mode === 'on') {
                notificationSound.play();
             }
             resetForm();
          }
       } catch (error) {
+         if (error?.response?.data?.message === 'invalid signature') {
+            toastError("Token Süreniz Doldu.")
+            handleLogout();
+         }
          console.error('Submit error:', error);
       }
    };
